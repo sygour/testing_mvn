@@ -30,6 +30,9 @@ fi
 
 # Things for GiT
 # Bash completion
+if [ -f /opt/local/share/doc/git-core/contrib/completion/git-prompt.sh ]; then
+    . /opt/local/share/doc/git-core/contrib/completion/git-prompt.sh
+fi
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
@@ -177,12 +180,6 @@ alias ll='ls -lF'
 alias la='ls -A'
 alias lla='ls -lFA'
 alias l='ls -CF'
-alias back='cd $OLDPWD'
-alias rm='rm -vi'
-alias cp='cp -vi'
-alias mv='mv -vi'
-alias fn='find -name'
-alias fin='find -iname'
 
 # command executed at terminal start
-fortune
+fortune | cowsay
